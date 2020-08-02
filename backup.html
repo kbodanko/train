@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>backup</title>
+    <script src="https://kit.fontawesome.com/3a107bba96.js" crossorigin="anonymous"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            font-size: medium;
+        }
+
+        #all {
+            background-color: rgb(190, 210, 211);
+        }
+
+        #tool {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            box-shadow: 0 0 3px 3px grey;
+            z-index: 1;
+            position: sticky;
+            top: 0;
+            background-color: white;
+            position: fixed;
+            width: 100%;
+            display: inline-flex;
+            font-variant: small-caps;
+            font-size: 1.2rem;
+        }
+
+        #tool li {
+            cursor: pointer
+        }
+
+        #tool li:hover {
+            color: rgb(116, 233, 233);
+        }
+
+        #logo {
+            padding-right: 5%;
+            padding-left: 5%;
+            display: inline-flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        #ul,
+        ul li {
+            display: block;
+
+            padding-right: 5%;
+
+        }
+
+        #tool ul {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        h1 {
+            margin-top: 0px;
+            text-align: center;
+        }
+
+        #logo+div {
+            width: 100%;
+            display: flex;
+            justify-content: end;
+        }
+
+        #jpg img {
+            width: 100%;
+        }
+
+        #jpg {
+            box-shadow: 0 0 5px 5px rgb(182, 166, 166);
+            display: flex;
+        }
+
+        /* dlaczego nie działa relative? */
+        #sun {
+            letter-spacing: 1mm;
+
+            font-size: xx-large;
+            font-family: sans-serif;
+            font-weight: 100;
+            position: absolute;
+
+            left: 57%;
+            top: 60%;
+        }
+
+
+
+        .brick {
+
+            box-shadow: 0 0 5px 5px rgb(182, 166, 166);
+            background-color: white;
+            width: 96%;
+            margin: 0 2% 0 2%;
+        }
+
+        #hack {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+
+            position: relative;
+            margin: -4rem 2% 0 2%;
+            width: 96%;
+            height: 4rem;
+            background-color: white;
+        }
+
+        .up {
+            margin-bottom: 3rem;
+            color: rgb(44, 43, 43);
+            text-align: center;
+        }
+
+        .down {
+            margin-bottom: 3rem;
+            color: rgb(44, 43, 43);
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            padding-bottom: 6rem;
+        }
+
+
+
+        .top_circle {
+            text-align: center;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .circle {
+            box-shadow: 2px 2px 4px 6px rgb(214, 211, 211);
+            margin-bottom: 1rem;
+            width: 180px;
+            height: 180px;
+            border-radius: 90px;
+
+        }
+
+        .circle1 {
+            margin-bottom: 1rem;
+            width: 180px;
+            height: 180px;
+        }
+
+        .tomato {
+            font-weight: bolder;
+        }
+
+        .tomato,
+        .undertomato {
+            color: rgb(44, 43, 43);
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        #train {
+            position: relative;
+            box-shadow: 0 0 3px 3px grey;
+            width: 96%;
+            margin: 0 2% 0 2%;
+            background-image: url(jpgs/train.jpg);
+            height: 30rem;
+
+        }
+
+        #texttrain {
+            color: ivory;
+            letter-spacing: 1mm;
+
+            font-size: x-large;
+            font-family: sans-serif;
+            font-weight: 100;
+            position: relative;
+            top: 75%;
+            left: 73%;
+
+        }
+
+        h2 {
+            margin: 0;
+            padding-top: 5%;
+        }
+
+        #form {
+
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+            box-shadow: 0 0 3px 3px grey;
+            background-image: url(jpgs/sub.jpg);
+            width: 96%;
+            margin: 0 2% 0 2%;
+        }
+
+        #more {
+            border-radius: 3px;
+            margin: 0 25% 4rem 25%;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            text-align: center;
+            font-size: 2rem;
+            font-family: serif;
+            font-weight: bolder;
+            width: 50%;
+            background-color: ivory;
+            background: rgba(255, 255, 255, 0.6);
+            filter: alpha(opacity=50);
+        }
+
+        #form1 {
+
+            position: relative;
+            border-radius: 6px;
+            padding: 2rem 0 2rem 4rem;
+            width: 40%;
+            margin: 1rem 32.5% 6rem 27.5%;
+            background-color: ivory;
+        }
+
+        input[type=text] {
+            font-size: 1rem;
+            border: 0;
+        }
+
+        input[type=submit] {
+            position: relative;
+            top: 0;
+            left: 17%;
+            cursor: pointer;
+            border-radius: 3px;
+            border: 0;
+            background-color: rgb(167, 164, 164);
+            padding: 1rem 2rem 1rem 2rem;
+            color: ivory;
+            font-size: 1rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+        }
+
+        .set {
+            display: flex;
+            justify-content: flex-end;
+            flex-flow: column nowrap;
+            color: rgb(58, 129, 129);
+            width: 27%;
+            border: 1px solid rgb(226, 223, 223);
+            border-radius: 7px;
+            line-height: 1.5;
+            box-shadow: 0 0 3px 3px rgb(226, 223, 223);
+            font-size: 15px;
+            font-weight: 100;
+            color: rgb(41, 70, 70);
+        }
+
+        .set ul {
+            padding-top: 2rem;
+            padding-left: 0;
+            margin-left: 2rem;
+            text-align: left;
+        }
+
+        .flex-start {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+        }
+
+        .set_name {
+            padding-top: 1rem;
+            text-align: center;
+            font-variant: small-caps;
+            font-size: 2rem;
+            font-family: serif;
+            font-weight: bold;
+            color: rgb(35, 126, 126);
+        }
+
+        .price {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            text-align: center;
+            border-bottom: 1px solid rgb(226, 223, 223);
+            margin-top: 2rem;
+            padding-bottom: 2rem;
+            color: rgb(24, 100, 100);
+        }
+
+        .price+div {
+            margin-left: 2rem;
+        }
+
+        h3 {
+            margin-top: 0;
+            padding-top: 3rem;
+            color: rgb(58, 129, 129);
+        }
+
+        #down {
+            color: rgb(58, 129, 129);
+        }
+
+
+        li {
+            list-style-image: url(jpgs/yes.jpg)
+        }
+
+        button {
+            cursor: pointer;
+            padding: 3%;
+            font-size: 1.3rem;
+            border: 0;
+            border-radius: 4px;
+            width: 100%;
+            background-color: rgb(102, 92, 92);
+            color: ivory;
+            margin-bottom: 2rem;
+        }
+
+        #space2 {
+            height: 3rem;
+            width: auto;
+        }
+
+        #space1 {
+            height: 1.5rem;
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id=all>
+        <div id=tool>
+            <div id="logo">logo</div>
+            <div>
+                <ul>
+                    <li>pomidor</li>
+                    <li>makieta</li>
+                    <li>trąba</li>
+                    <li>piaskownica</li>
+                </ul>
+            </div>
+
+        </div>
+        <div id=sun>
+            Słońce.<br>Zachodzi zawsze.</div>
+        <div id="jpg"><img src="jpgs/sha.jpg">
+        </div>
+        <div id="hack"></div>
+        <div class="brick">
+            <div class="up">
+                <h1>Pomidorowy pomidor</h1>
+            </div>
+            <div id="hh" class="down">Pomidorowe pomidory są czerwone. Albo zielone.</div>
+            <div class="container">
+                <!-- div-zielony -->
+                <div>
+                    <div><img src="jpgs/pomidor2.jpg" class=circle></div>
+                    <div class="tomato">Zielony</div>
+                    <div class="undertomato">Zielony pomidor jest zielony</div>
+
+                </div>
+                <!-- div-czerwony -->
+                <div>
+                    <div><img src="jpgs/pomidor1.jpg" class=circle></div>
+                    <div class="tomato">Czerwony</div>
+                    <div class="undertomato">Czerwony pomidor jest czerwony</div>
+                </div>
+                <!-- div-kolorowy -->
+                <div>
+                    <div><img src="jpgs/pomidor.jpg" class=circle>
+                    </div>
+                    <div class="tomato">Kolorowy</div>
+                    <div class="undertomato">Kolorowy jest... kolorowy!</div class="undertomato">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="train">
+        <div id="texttrain">Nie jedzie pociąg<br>z daleka</div>
+    </div>
+
+    <div class="brick">
+        <div class="up">
+            <h2>Pomidory to więcej, niż keczup</h2>
+        </div>
+        <div class="down">Sałatka, przecier, sos do pizzy. To tylko niektore rzeczy, które powstają z pomidorowych
+            pomidorów</div>
+        <!-- zmienić układ divów jak w jpg_pom -->
+
+
+
+        <div class="container">
+            <!-- sok -->
+            <div class="top_circle">
+                <div class="circle1"><img src="jpgs/juice.jpg"></div>
+                <div class="down">Sok z pomidorowych pomidorów</div>
+            </div>
+            <!-- nasiona -->
+            <div class="top_circle">
+                <div class="circle1"><img src="jpgs/seeds.jpg"></div>
+                <div class="down">Nasiona i...</div>
+            </div>
+            <!-- zupa -->
+            <div class="top_circle">
+                <div class="circle1"><img src="jpgs/soup.jpg"></div>
+                <div class="down">Zupa pomidorowa!</div>
+            </div>
+        </div>
+    </div>
+    <div id="form">
+        <div id=more>Chcesz wiedzieć więcej o pomidorach?</div>
+        <div id="form1">
+            <form action="katarzyna.bodanko@gmail.com" method="POST"><input type="text" name="nazwa" id="text"
+                    placeholder="Twój adres e-mail" onfocus="this.placeholder=''"
+                    onblur="this.placeholder='Twój adres e-mail'">
+                <input type="submit" value="SUBSCRIBE"></form>
+        </div>
+    </div>
+    <div class="brick">
+        <div class="up">
+
+            <h3>Pomidoring</h3>
+        </div>
+        <div class="down" id="down">Pomidory dla każdego ogrodnika, na działkę, do ogródka, nawet na balkon</div>
+        <div class="container">
+            <div class="set">
+
+                <div class="flex-start">
+                    <div class="set_name">balkon</div>
+                    <div class="price">Pakiet 5zł</div>
+                </div>
+                <div>
+
+                    <ul>
+                        <div>
+                            Trzy rodzaje nasion
+                        </div>
+                        <li>Dziesięć doniczek do wysiewu</li>
+                        <li>Miniszklarenka</li>
+                    </ul>
+                </div>
+                <div id="space2"></div>
+                <div><button type="button" id="button1">Zamów</button></div>
+
+            </div>
+            <div class="set">
+
+                <div class="flex-start">
+                    <div class="set_name">działka</div>
+                    <div class="price">Pakiet 20zł</div>
+                </div>
+                <div>
+
+                    <ul>
+                        <li>Trzy rodzaje nasion</li>
+                        <li>Dziesięć doniczek do wysiewu</li>
+                        <li>Miniszklarenka</li>
+                        <li>Dziesięć doniczek do wysiewu</li>
+                    </ul>
+                </div>
+                <div id="space1"></div>
+                <div><button type="button" id="button2">Zamów</button></div>
+
+            </div>
+
+            <div class="set">
+
+                <div id="flex-start">
+                    <div class="set_name">ogród</div>
+                    <div class="price">Pakiet 50zł</div>
+                </div>
+                <div>
+                    <ul>
+                        <li>Trzy rodzaje nasion</li>
+                        <li>Dziesięć doniczek do wysiewu</li>
+                        <li>Miniszklarenka</li>
+                        <li>Dziesięć doniczek do wysiewu</li>
+                        <li>Miniszklarenka</li>
+                    </ul>
+                </div>
+
+                <div><button type="button" id="button3">Zamów</button></div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <div class="brick">
+        <div id="write">Napisz do nas</div>
+        <div><img src="pin.jpg"></div>
+        <div id="adress">
+            <address>Pomidorowa 6/9 55555 Pomidorowo</address>
+        </div>
+    </div> -->
+    </div>
+
+    </div>
+</body>
+
+</html>
